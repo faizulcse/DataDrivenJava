@@ -28,18 +28,15 @@ public class TestUtil {
 
 
 		//System.out.println(sheet.getLastRowNum() + "--------" + sheet.getRow(0).getLastCellNum());
-		Object[][] dataa = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
-		for (int i = 0; i < sheet.getLastRowNum(); i++) {
-			int row = sheet.getRow(i).getLastCellNum();
-			//System.out.println(row);
-			for (int k = 0; k < row; k++) {
-				dataa[i][k] = sheet.getRow(i).getCell(k).toString();//row.getCell(k).getStringCellValue();
-				 System.out.print(dataa[i][k]+ " || ");
+		Object[][] data = new Object[sheet.getLastRowNum()+1][sheet.getRow(0).getLastCellNum()];
+		for (int i = 0; i < sheet.getLastRowNum()+1; i++) {
+            Row row = sheet.getRow(i);
+            for (int j = 0; j < row.getLastCellNum(); j++) {
+           	    data[i][j] =row.getCell(j).toString();
+                System.out.print(data[i][j] + " || ");
 			}
 			System.out.println();
 		}
-
-		Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
 		return data;
 	}
 

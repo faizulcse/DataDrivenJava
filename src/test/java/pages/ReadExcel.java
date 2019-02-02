@@ -25,13 +25,16 @@ public class ReadExcel {
         Sheet guru99Sheet = guru99Workbook.getSheet(sheetName);
         int rowCount = guru99Sheet.getLastRowNum()-guru99Sheet.getFirstRowNum();
         System.out.println("row num:"+rowCount);
-        for (int i = 0; i < rowCount+1; i++) {
+
+        Object[][] dataa = new Object[guru99Sheet.getLastRowNum()][guru99Sheet.getRow(0).getLastCellNum()];
+        for (int i = 0; i < guru99Sheet.getLastRowNum()+1; i++) {
             Row row = guru99Sheet.getRow(i);
             for (int j = 0; j < row.getLastCellNum(); j++) {
-                System.out.print(row.getCell(j).getStringCellValue()+"|| ");
+                System.out.print(row.getCell(j)+ " ");
             }
             System.out.println();
         }
+
     }
     public static void main(String...strings) throws IOException{
        ReadExcel objExcelFile = new ReadExcel();

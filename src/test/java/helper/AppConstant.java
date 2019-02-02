@@ -25,5 +25,5 @@ public class AppConstant {
 	public static final String TESTNG_REPORT_DIR = CURRENT_DIR+"/assets/";
 	
 	public static final String PATH_TEST_DATA = CURRENT_DIR+"/data/";
-	public static final String FILE_TEST_DATA = "LeadershipData.xlsx";
+	public static final String FILE_TEST_DATA = "ExcelPrint.xlsx";
 }

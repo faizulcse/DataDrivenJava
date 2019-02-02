@@ -17,7 +17,6 @@ public class ExcelUtil {
 	private static XSSFRow xRow;
 
 	public static void setExcelFile(String Path, String SheetName) {
-
 		try {
 			ExcelWBook = new XSSFWorkbook(new FileInputStream(Path));
 			ExcelWSheet = ExcelWBook.getSheet(SheetName);
@@ -27,7 +26,6 @@ public class ExcelUtil {
 	}
 
 	public static String getCellData(int RowNum, int ColNum) {
-
 		try {
 			xCell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
 			return xCell.getStringCellValue();
@@ -35,11 +33,9 @@ public class ExcelUtil {
 		catch (Exception e) {
 			return "";
 		}
-
 	}
 
 	public static void setCellData(String Result, int RowNum, int ColNum){
-
 		try {
 			xRow = ExcelWSheet.getRow(RowNum);
 			xCell = xRow.getCell(ColNum, Row.MissingCellPolicy.RETURN_BLANK_AS_NULL);
@@ -60,5 +56,4 @@ public class ExcelUtil {
 			e.printStackTrace();
 		}
 	}
-
 }
